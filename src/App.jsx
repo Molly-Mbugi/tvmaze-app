@@ -6,8 +6,7 @@ import EpisodeTable from './components/EpisodeTable.jsx';
 import AddPage from "./AddPage.jsx";
 
 const App = () => {
-    // Initialize homePageContent as an empty array
-    const [homePageContent, setHomePageContent] = useState([]);
+    const [episodeList, setEpisodeList] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
@@ -21,13 +20,13 @@ const App = () => {
                 throw new Error('Failed to fetch episode data');
             }
             const data = await response.json();
-            setHomePageContent(data); // Set homePageContent with fetched data
+            setEpisodeList(data);
         } catch (error) {
             console.error('Error fetching episode data:', error);
         }
     };
 
-    const filteredEpisodes = homePageContent.filter(episode => {
+    const filteredEpisodes = episodeList.filter(episode => {
         return episode.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
@@ -35,24 +34,23 @@ const App = () => {
         setSearchTerm(value);
     };
 
-    // Add function to update homePageContent
-    const updateHomePageContent = (newContent) => {
-        setHomePageContent(newContent);
+    const handleSearch = () => {
+        console.log('Search button clicked');
+        // Add logic to handle search
     };
 
     return (
         <Router>
             <div>
                 <Header />
+                <SearchBar onChange={handleSearchChange} onSearch={handleSearch} />
                 <Routes>
                     <Route path="/" element={
                         <div>
-                            <SearchBar onChange={handleSearchChange} />
                             <EpisodeTable episodes={filteredEpisodes} />
                         </div>
                     } />
-                    {/* Pass updateHomePageContent function to AddPage */}
-                    <Route path="/add" element={<AddPage homePageContent={homePageContent} updateHomePageContent={updateHomePageContent} />} />
+                    <Route path="/add" element={<AddPage />} />
                 </Routes>
             </div>
         </Router>
@@ -60,13 +58,6 @@ const App = () => {
 }
 
 export default App;
-
-
-
-
-
-
-;
 
 
 

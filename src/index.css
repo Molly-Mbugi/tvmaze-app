@@ -169,36 +169,46 @@ input[type="text"] {
   border-radius: 5px;
   flex: 1;
 }
+/* index.css */
+
 .search-bar-container {
-  display: flex;
-  align-items: center; /* Align items vertically */
+  text-align: center;
 }
 
-.search-button,
-.refresh-button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
+.header1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333; /* Dark color for header */
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc; /* Gray border for input */
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-right: 15px; /* Add margin between buttons */
 }
 
 .search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   background-color: #007bff; /* Blue color for the search button */
-  color: #fff;
+  color: #fff; /* White text color for the button */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.refresh-button {
-  background-color: #28a745; /* Green color for the refresh button */
-  color: #fff;
-}
-
-.search-button:hover,
-.refresh-button:hover {
+.search-button:hover {
   background-color: #0056b3; /* Darker shade of blue for hover effect */
 }
+
 
 
 /* index.css */
