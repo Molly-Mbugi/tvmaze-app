@@ -226,3 +226,12 @@ input[type="text"] {
   display: flex;
   align-items: center;
 }
+/* index.css */
+
+.table-description {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
