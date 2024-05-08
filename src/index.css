@@ -169,6 +169,10 @@ input[type="text"] {
   border-radius: 5px;
   flex: 1;
 }
+.search-bar-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
 
 .search-button,
 .refresh-button {
@@ -178,6 +182,7 @@ input[type="text"] {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-right: 15px; /* Add margin between buttons */
 }
 
 .search-button {
@@ -196,3 +201,18 @@ input[type="text"] {
 }
 
 
+/* index.css */
+
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header1 {
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}

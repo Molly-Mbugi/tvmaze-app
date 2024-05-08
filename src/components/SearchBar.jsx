@@ -22,18 +22,25 @@ const SearchBar = ({ onChange, onSearch, onRefresh }) => {
 
     return (
         <div className="search-bar-container">
-            <input
-                type="text"
-                placeholder="Search Episodes..."
-                className="search-input"
-                onChange={handleInputChange}
-            />
-            <button className="search-button" onClick={handleSearchClick}>Search</button>
-            <button className="refresh-button" onClick={handleRefreshClick}>Refresh</button>
+            <h1 className="header1">Find Movies, TV shows and more</h1> {/* New header */}
+            <div className="search-bar">
+                <input
+                    type="text"
+                    placeholder="Search Episodes..."
+                    className="search-input"
+                    onChange={handleInputChange}
+                />
+                <button className="search-button" onClick={handleSearchClick}>Search</button>
+                <button className="refresh-button" onClick={handleRefreshClick}>Refresh</button>
+            </div>
         </div>
     );
 }
 
 export default SearchBar;
+
+
+
+
 
 
