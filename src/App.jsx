@@ -24,6 +24,10 @@ const App = () => {
         }
     };
 
+    const filteredEpisodes = episodeList.filter(episode => {
+        return episode.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+
     const handleSearchChange = (value) => {
         setSearchTerm(value);
     };
@@ -32,12 +36,22 @@ const App = () => {
         <div>
             <Header />
             <SearchBar onChange={handleSearchChange} />
-            <EpisodeTable episodes={episodeList} />
+            <EpisodeTable episodes={filteredEpisodes} />
         </div>
     );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
 
 
 
