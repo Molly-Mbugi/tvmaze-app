@@ -35,15 +35,20 @@ const App = () => {
     };
 
     const handleSearch = () => {
-        console.log('Search button clicked');
         // Add logic to handle search
+        console.log('Search button clicked');
+    };
+
+    const handleRefresh = () => {
+        // Add logic to handle refresh
+        console.log('Refresh button clicked');
     };
 
     return (
         <Router>
             <div>
                 <Header />
-                <SearchBar onChange={handleSearchChange} onSearch={handleSearch} />
+                <SearchBar onChange={handleSearchChange} onSearch={handleSearch} onRefresh={handleRefresh} />
                 <Routes>
                     <Route path="/" element={
                         <div>
@@ -58,6 +63,14 @@ const App = () => {
 }
 
 export default App;
+
+
+
+
+
+
+
+;
 
 
 

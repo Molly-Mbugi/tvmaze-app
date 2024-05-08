@@ -218,9 +218,7 @@ input[type="text"] {
   flex-direction: column;
 }
 
-.header1 {
-  margin-bottom: 10px; /* Adjust margin as needed */
-}
+
 
 .search-bar {
   display: flex;
