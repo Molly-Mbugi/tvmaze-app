@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter, Routes, and Route
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import SearchBar from './components/SearchBar.jsx';
 import EpisodeTable from './components/EpisodeTable.jsx'; 
-import AddPage from "./AddPage.jsx"; // Import the AddPage component
+import AddPage from "./AddPage.jsx";
 
 const App = () => {
     const [episodeList, setEpisodeList] = useState([]);
@@ -11,11 +11,11 @@ const App = () => {
 
     useEffect(() => {
         fetchEpisodeData();
-    }, []); // Fetch episode data when component mounts
+    }, []);
 
     const fetchEpisodeData = async () => {
         try {
-            const response = await fetch('http://localhost:3000/episodes'); // Adjust the URL as per your JSON server
+            const response = await fetch('http://localhost:3000/episodes');
             if (!response.ok) {
                 throw new Error('Failed to fetch episode data');
             }
@@ -35,17 +35,17 @@ const App = () => {
     };
 
     return (
-        <Router> {/* Wrap your components in Router */}
+        <Router>
             <div>
                 <Header />
-                <Routes> {/* Use Routes component */}
-                    <Route path="/" element={ // Specify the path and the corresponding component using the 'element' prop
+                <Routes>
+                    <Route path="/" element={
                         <div>
                             <SearchBar onChange={handleSearchChange} />
                             <EpisodeTable episodes={filteredEpisodes} />
                         </div>
                     } />
-                    <Route path="/add" element={<AddPage />} /> {/* Specify the path and the corresponding component */}
+                    <Route path="/add" element={<AddPage />} />
                 </Routes>
             </div>
         </Router>
@@ -53,6 +53,8 @@ const App = () => {
 }
 
 export default App;
+
+
 
 ;
 

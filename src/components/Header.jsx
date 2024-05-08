@@ -1,19 +1,16 @@
+/* Header.jsx */
+
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import '../index.css'; 
+import Navbar from './Navbar.jsx'; // Import the Navbar component
 
 const Header = () => {
     return (
-        <div className="header">
-            <h1>TV MAZE APP</h1>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li> {/* Link to the Home page */}
-                    <li><Link to="/add">Add</Link></li> {/* Link to the Add page */}
-                </ul>
-            </nav>
-        </div>
+        <header>
+            <Navbar /> {/* Include the Navbar component */}
+        </header>
     );
 }
 
 export default Header;
+
+

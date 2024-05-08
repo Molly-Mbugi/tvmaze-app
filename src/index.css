@@ -127,5 +127,31 @@ input[type="text"] {
   color: #007bff;
 }
 
+/* navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333; /* Background color for the navbar */
+  color: #fff; /* Text color for links */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
 
 
