@@ -6,7 +6,8 @@ import EpisodeTable from './components/EpisodeTable.jsx';
 import AddPage from "./AddPage.jsx";
 
 const App = () => {
-    const [episodeList, setEpisodeList] = useState([]);
+    // Initialize homePageContent as an empty array
+    const [homePageContent, setHomePageContent] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
@@ -20,18 +21,23 @@ const App = () => {
                 throw new Error('Failed to fetch episode data');
             }
             const data = await response.json();
-            setEpisodeList(data);
+            setHomePageContent(data); // Set homePageContent with fetched data
         } catch (error) {
             console.error('Error fetching episode data:', error);
         }
     };
 
-    const filteredEpisodes = episodeList.filter(episode => {
+    const filteredEpisodes = homePageContent.filter(episode => {
         return episode.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
     const handleSearchChange = (value) => {
         setSearchTerm(value);
+    };
+
+    // Add function to update homePageContent
+    const updateHomePageContent = (newContent) => {
+        setHomePageContent(newContent);
     };
 
     return (
@@ -45,7 +51,8 @@ const App = () => {
                             <EpisodeTable episodes={filteredEpisodes} />
                         </div>
                     } />
-                    <Route path="/add" element={<AddPage />} />
+                    {/* Pass updateHomePageContent function to AddPage */}
+                    <Route path="/add" element={<AddPage homePageContent={homePageContent} updateHomePageContent={updateHomePageContent} />} />
                 </Routes>
             </div>
         </Router>
@@ -53,6 +60,9 @@ const App = () => {
 }
 
 export default App;
+
+
+
 
 
 
