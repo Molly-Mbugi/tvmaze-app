@@ -19,7 +19,7 @@ input[type="text"] {
   padding: 10px;
   border: 3px solid #030303;
   border-radius: 5px;
-  width: 1320px;
+  width: 1000px;
   font-size: 16px;
   background-color: rgb(211, 207, 207);
 }
@@ -153,5 +153,46 @@ input[type="text"] {
   text-decoration: underline;
 }
 
+/* index.css */
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.search-button,
+.refresh-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button {
+  background-color: #007bff; /* Blue color for the search button */
+  color: #fff;
+}
+
+.refresh-button {
+  background-color: #28a745; /* Green color for the refresh button */
+  color: #fff;
+}
+
+.search-button:hover,
+.refresh-button:hover {
+  background-color: #0056b3; /* Darker shade of blue for hover effect */
+}
 
 
