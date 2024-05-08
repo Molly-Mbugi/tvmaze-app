@@ -77,6 +77,3 @@ const AddPage = ({ homePageContent, updateHomePageContent }) => {
 }
 
 export default AddPage;
-
-
-

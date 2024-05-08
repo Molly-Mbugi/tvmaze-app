@@ -196,7 +196,7 @@ input[type="text"] {
 
 .search-button {
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: rem;
   background-color: #007bff; /* Blue color for the search button */
   color: #fff; /* White text color for the button */
   border: none;
@@ -226,12 +226,3 @@ input[type="text"] {
   display: flex;
   align-items: center;
 }
-/* index.css */
-
-.table-description {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
