@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter, Routes, and Route
 import Header from './components/Header.jsx';
 import SearchBar from './components/SearchBar.jsx';
-import EpisodeTable from './components/EpisodeTable.jsx'; // Import the EpisodeTable component
+import EpisodeTable from './components/EpisodeTable.jsx'; 
+import AddPage from "./AddPage.jsx"; // Import the AddPage component
 
 const App = () => {
     const [episodeList, setEpisodeList] = useState([]);
@@ -33,15 +35,28 @@ const App = () => {
     };
 
     return (
-        <div>
-            <Header />
-            <SearchBar onChange={handleSearchChange} />
-            <EpisodeTable episodes={filteredEpisodes} />
-        </div>
+        <Router> {/* Wrap your components in Router */}
+            <div>
+                <Header />
+                <Routes> {/* Use Routes component */}
+                    <Route path="/" element={ // Specify the path and the corresponding component using the 'element' prop
+                        <div>
+                            <SearchBar onChange={handleSearchChange} />
+                            <EpisodeTable episodes={filteredEpisodes} />
+                        </div>
+                    } />
+                    <Route path="/add" element={<AddPage />} /> {/* Specify the path and the corresponding component */}
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
 export default App;
+
+;
+
+
 
 
 
