@@ -8,6 +8,7 @@ Application Name: TVMAZE SHOW APP
 
 ## Description
     Search and Explore: Users can search for TV shows by title, genre, or keywords, and explore detailed information about each show by searching their names.
+    users are able to add components to the home page information using a form from the add episode page.
 
 ## How it works
  *  The user should be able to switch from light to darkmode.
@@ -38,10 +39,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
