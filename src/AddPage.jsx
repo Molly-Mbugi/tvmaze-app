@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './index.css'; // Import the CSS file for navbar styles
 
 const AddPage = ({ updateHomePageContent }) => {
     // State hooks for form data
@@ -49,7 +50,7 @@ const AddPage = ({ updateHomePageContent }) => {
     };
 
     return (
-        <div>
+        <div className="form-container"> {/* Apply CSS class for styling */}
             <h2>Add Page</h2>
             {/* Form for adding new episodes */}
             <form onSubmit={handleSubmit}>
@@ -87,4 +88,5 @@ const AddPage = ({ updateHomePageContent }) => {
 }
 
 export default AddPage;
+
 
