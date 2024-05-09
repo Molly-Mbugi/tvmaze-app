@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
 
-const AddPage = ({ homePageContent, updateHomePageContent }) => {
+const AddPage = ({ updateHomePageContent }) => {
     // State hooks for form data
     const [formData, setFormData] = useState({
         name: '',
         image: '',
         genre: '',
         runtime: '',
+        summary: '' // Add summary field to the form data
     });
 
     // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add logic to add the submitted data to the home page
-        // For example:
+        // Create a new episode object
         const newEpisode = {
             id: Math.random().toString(36).substr(2, 9), // Generate a random ID
             name: formData.name,
             image: formData.image,
             genre: formData.genre,
             runtime: formData.runtime,
+            summary: formData.summary // Include summary in the new episode
         };
-        // Combine the new episode with existing episodes
-        const updatedHomePageContent = [...homePageContent, newEpisode];
-        // Call a function to update the home page content
-        updateHomePageContent(updatedHomePageContent);
+        // Update the home page content with the new episode
+        updateHomePageContent(prevContent => [...prevContent, newEpisode]);
         // Reset the form data
         setFormData({
             name: '',
             image: '',
             genre: '',
             runtime: '',
+            summary: '' // Reset summary field
         });
     };
 
@@ -43,10 +43,15 @@ const AddPage = ({ homePageContent, updateHomePageContent }) => {
         }));
     };
 
+    // Function to handle navigation back to the home page
+    const handleGoBack = () => {
+        window.location.href = '/'; // Navigate to the home page
+    };
+
     return (
         <div>
             <h2>Add Page</h2>
-            {/* Form for adding new components */}
+            {/* Form for adding new episodes */}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
@@ -70,10 +75,16 @@ const AddPage = ({ homePageContent, updateHomePageContent }) => {
                     <label>Runtime:</label>
                     <input type="text" name="runtime" value={formData.runtime} onChange={handleChange} />
                 </div>
+                <div>
+                    <label>Summary:</label>
+                    <textarea name="summary" value={formData.summary} onChange={handleChange} />
+                </div>
                 <button type="submit">Add Episode</button>
+                <button type="button" onClick={handleGoBack}>Back</button> {/* Button to go back to home page */}
             </form>
         </div>
     );
 }
 
 export default AddPage;
+

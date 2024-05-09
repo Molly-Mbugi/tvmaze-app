@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import SearchBar from './components/SearchBar.jsx';
-import EpisodeTable from './components/EpisodeTable.jsx'; 
+import EpisodeTable from './components/EpisodeTable.jsx';
 import AddPage from "./AddPage.jsx";
 
 const App = () => {
@@ -34,28 +34,21 @@ const App = () => {
         setSearchTerm(value);
     };
 
-    const handleSearch = () => {
-        // Add logic to handle search
-        console.log('Search button clicked');
-    };
-
-    const handleRefresh = () => {
-        // Add logic to handle refresh
-        console.log('Refresh button clicked');
+    const updateHomePageContent = (newContent) => {
+        setEpisodeList(newContent);
     };
 
     return (
         <Router>
             <div>
                 <Header />
-                <SearchBar onChange={handleSearchChange} onSearch={handleSearch} onRefresh={handleRefresh} />
+                <SearchBar onChange={handleSearchChange} />
                 <Routes>
-                    <Route path="/" element={
-                        <div>
-                            <EpisodeTable episodes={filteredEpisodes} />
-                        </div>
-                    } />
-                    <Route path="/add" element={<AddPage />} />
+                    <Route path="/" element={<EpisodeTable episodes={filteredEpisodes} />} />
+                    <Route
+                        path="/add"
+                        element={<AddPage homePageContent={episodeList} updateHomePageContent={updateHomePageContent} />}
+                    />
                 </Routes>
             </div>
         </Router>
@@ -63,6 +56,7 @@ const App = () => {
 }
 
 export default App;
+
 
 
 
