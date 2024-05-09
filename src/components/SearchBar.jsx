@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom'; // Import the useLocation hook
-import '../index.css'; // Import the CSS file for styling
+import { useLocation } from 'react-router-dom'; //  hook
+import '../index.css'; // Import the CSS 
 
 const SearchBar = ({ onChange, onSearch }) => {
-    const location = useLocation(); // Get the current location
+    const location = useLocation(); // the current location
     const isAddPage = location.pathname === "/add"; // Check if the current path is "/add"
 
-    // Render the search bar only if it's not the add episode page
+    // Render the search bar for episode name
     if (isAddPage) {
         return (
             <div className="search-bar-container">

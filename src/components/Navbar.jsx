@@ -1,8 +1,7 @@
-// Navbar.jsx
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../index.css'; // Import the CSS file for navbar styles
+import '../index.css'; // Import css navbar 
 
 const Navbar = () => {
     return (
@@ -11,7 +10,7 @@ const Navbar = () => {
             <div className="nav-links">
                 <Link to="/" className="nav-link">Home</Link>
                 <Link to="/add" className="nav-link">Add Episode</Link>
-                {/* Add more links as needed */}
+                
             </div>
         </nav>
     );

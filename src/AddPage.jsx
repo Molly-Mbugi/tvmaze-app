@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.css'; // Import the CSS file for navbar styles
+import './index.css'; // Import the CSS 
 
 const AddPage = ({ updateHomePageContent }) => {
     // State hooks for form data
@@ -8,20 +8,20 @@ const AddPage = ({ updateHomePageContent }) => {
         image: '',
         genre: '',
         runtime: '',
-        summary: '' // Add summary field to the form data
+        summary: '' 
     });
 
     // Function to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Create a new episode object
+        // Create a new episode 
         const newEpisode = {
-            id: Math.random().toString(36).substr(2, 9), // Generate a random ID
+            id: Math.random().toString(36).substr(2, 9), // Generate an ID
             name: formData.name,
             image: formData.image,
             genre: formData.genre,
             runtime: formData.runtime,
-            summary: formData.summary // Include summary in the new episode
+            summary: formData.summary 
         };
         // Update the home page content with the new episode
         updateHomePageContent(prevContent => [...prevContent, newEpisode]);
@@ -31,7 +31,7 @@ const AddPage = ({ updateHomePageContent }) => {
             image: '',
             genre: '',
             runtime: '',
-            summary: '' // Reset summary field
+            summary: '' 
         });
     };
 
@@ -51,9 +51,9 @@ const AddPage = ({ updateHomePageContent }) => {
     };
 
     return (
-        <div className="form-container"> {/* Apply CSS class for styling */}
+        <div className="form-container"> 
             <h2>Add Page</h2>
-            {/* Form for adding new episodes */}
+            
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
@@ -70,7 +70,7 @@ const AddPage = ({ updateHomePageContent }) => {
                         <option value="Action">Action</option>
                         <option value="Adventure">Adventure</option>
                         <option value="Comedy">Comedy</option>
-                        {/* Add more genre options as needed */}
+                        
                     </select>
                 </div>
                 <div>
@@ -82,7 +82,7 @@ const AddPage = ({ updateHomePageContent }) => {
                     <textarea name="summary" value={formData.summary} onChange={handleChange} />
                 </div>
                 <button type="submit">Add Episode</button>
-                <button type="button" onClick={handleGoBack}>Back</button> {/* Button to go back to home page */}
+                <button type="button" onClick={handleGoBack}>Back</button> 
             </form>
         </div>
     );

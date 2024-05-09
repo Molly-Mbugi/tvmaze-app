@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../index.css'; // Import the CSS file for navbar styles
+import '../index.css'; // css for navbar 
 
 function EpisodeTable({ episodes }) {
   // State to track the expanded episode

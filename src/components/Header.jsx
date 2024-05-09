@@ -1,12 +1,11 @@
-/* Header.jsx */
 
 import React from 'react';
-import Navbar from './Navbar.jsx'; // Import the Navbar component
+import Navbar from './Navbar.jsx'; // Import the Navbar 
 
 const Header = () => {
     return (
         <header>
-            <Navbar /> {/* Include the Navbar component */}
+            <Navbar /> 
         </header>
     );
 }
