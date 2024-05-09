@@ -46,7 +46,8 @@ const AddPage = ({ updateHomePageContent }) => {
 
     // Function to handle navigation back to the home page
     const handleGoBack = () => {
-        window.location.href = '/'; // Navigate to the home page
+        // Navigate back to the home page without refreshing
+        window.history.back();
     };
 
     return (
@@ -88,5 +89,8 @@ const AddPage = ({ updateHomePageContent }) => {
 }
 
 export default AddPage;
+
+
+
 
 
