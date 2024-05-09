@@ -1,11 +1,11 @@
 
 import React from 'react';
-import Navbar from './Navbar.jsx'; // Import the Navbar 
+import Navbar from './Navbar.jsx'; 
 
-const Header = () => {
+function Header() {
     return (
         <header>
-            <Navbar /> 
+            <Navbar />
         </header>
     );
 }
