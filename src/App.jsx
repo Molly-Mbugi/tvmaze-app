@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
@@ -11,7 +9,6 @@ import AboutPage from "./components/AboutPage.jsx";
 const App = () => {
     const [episodeList, setEpisodeList] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const currentRoute = window.location.pathname; // Get the current route using window.location.pathname
 
     useEffect(() => {
         fetchEpisodeData();
@@ -38,11 +35,13 @@ const App = () => {
         setSearchTerm(value);
     };
 
+    const currentRoute = window.location.pathname; // Get the current route using window.location.pathname
+
     return (
         <Router>
             <div>
                 <Header />
-                {currentRoute !== "/about" && <SearchBar onChange={handleSearchChange} />}
+                {currentRoute === "/" && <SearchBar onChange={handleSearchChange} />}
                 <Routes>
                     <Route path="/" element={<EpisodeTable episodes={filteredEpisodes} />} />
                     <Route
@@ -57,28 +56,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-
-
-
-
-;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
