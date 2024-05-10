@@ -1,12 +1,12 @@
+
+
 import React from 'react';
 
 const AboutPage = () => {
     return (
         <div>
-            <h2>About Us</h2>
-            <p>This is the About page content.</p>
+            <h2>About TV MAZE APP</h2>
+            <p>This is a simple TV Maze application built with React.</p>
         </div>
     );
 }
-
-export default AboutPage
