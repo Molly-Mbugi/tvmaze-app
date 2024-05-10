@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '../index.css'; // css for navbar 
 
-function EpisodeTable({ episodes }) {
+function EpisodeTable({ episodes, onDelete, onRefreshTable }) {
   // State to track the expanded episode
   const [expandedEpisode, setExpandedEpisode] = useState(null);
 
-  // Function to handle click on "See More" link
+  // Function "See More" link
   const handleSeeMore = (episodeId) => {
     if (expandedEpisode === episodeId) {
       // Collapse the episode if it's already expanded
@@ -13,6 +13,17 @@ function EpisodeTable({ episodes }) {
     } else {
       // Expand the clicked episode
       setExpandedEpisode(episodeId);
+    }
+  };
+
+  // Function delete episode
+  const handleDelete = async (episodeId) => {
+    if (onDelete) {
+      await onDelete(episodeId);
+      // Refresh the table after deletion
+      if (onRefreshTable) {
+        onRefreshTable();
+      }
     }
   };
 
@@ -34,10 +45,12 @@ function EpisodeTable({ episodes }) {
                   <a href={episode.url} target="_blank" rel="noopener noreferrer">Watch Episode</a>
                 </>
               )}
-              {/* "See More" link */}
+              
               <button onClick={() => handleSeeMore(episode.id)}>
                 {expandedEpisode === episode.id ? "See Less" : "See More"}
               </button>
+              
+              <button onClick={() => handleDelete(episode.id)}>Delete</button>
             </div>
           </div>
         ))}
