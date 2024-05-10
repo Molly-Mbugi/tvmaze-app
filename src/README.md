@@ -8,13 +8,15 @@ Application Name: TVMAZE SHOW APP
 
 ## Description
     Search and Explore: Users can search for TV shows by title, genre, or keywords, and explore detailed information about each show by searching their names.
+    The user should be able to access the Add episode form to add components to the home page and also able t see more and delete tha unwanted episodes at the home page.
+    The user should see more about our app and how it was started on the about us page
 
 ## How it works
- *  The user should be able to switch from light to darkmode.
- * There is clear display of episodes list.
- * There is a clear table that have the characters name abilities their gender and other characteristics. 
- * The user should be able to filter the characters by name from the given list of data on table.
- * You can refresh to go back to the full list of table the home data.
+ *  The user should be able to search his/her favourite shows on search bar
+ * There is clear display of all tv shows on the episode table at the home page.
+ * There is a page of add episodes where the user should be able to add the content at the home page using the form that we have created for you. 
+ * The user should be able to see the about page that has the details of our app and about the developers.
+ * enjoy using ourwebsite by moving from one page to another.
 ## Installation Requirements
 * major operating systems including Linux, macOS, and Windows. 
 * having an internet connection 
@@ -40,20 +42,19 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed! 
 ```
 
 # Live Link
-https://molly-mbugi.github.io/project-1/
+
 
 ## Technologies used
 HTML

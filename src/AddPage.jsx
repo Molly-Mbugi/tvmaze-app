@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css'; // Import the CSS 
 
-const AddPage = ({ updateHomePageContent }) => {
+const AddPage = ({ updateEpisodeList }) => {
     // State hooks for form data
     const [formData, setFormData] = useState({
         name: '',
@@ -12,27 +12,40 @@ const AddPage = ({ updateHomePageContent }) => {
     });
 
     // Function to handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Create a new episode 
-        const newEpisode = {
-            id: Math.random().toString(36).substr(2, 9), // Generate an ID
-            name: formData.name,
-            image: formData.image,
-            genre: formData.genre,
-            runtime: formData.runtime,
-            summary: formData.summary 
-        };
-        // Update the home page content with the new episode
-        updateHomePageContent(prevContent => [...prevContent, newEpisode]);
-        // Reset the form data
-        setFormData({
-            name: '',
-            image: '',
-            genre: '',
-            runtime: '',
-            summary: '' 
-        });
+        try {
+            const response = await fetch('http://localhost:3000/episodes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    image: formData.image,
+                    genre: formData.genre,
+                    runtime: formData.runtime,
+                    summary: formData.summary 
+                })
+            });
+            if (!response.ok) {
+                throw new Error('Failed to add episode');
+            }
+            // Retrieve the newly added episode from the response
+            const newEpisode = await response.json();
+            // Update the episode list with the new episode
+            updateEpisodeList(prevList => [...prevList, newEpisode]);
+            // Reset the form data
+            setFormData({
+                name: '',
+                image: '',
+                genre: '',
+                runtime: '',
+                summary: '' 
+            });
+        } catch (error) {
+            console.error('Error adding episode:', error);
+        }
     };
 
     // Function to handle form field changes
@@ -44,7 +57,7 @@ const AddPage = ({ updateHomePageContent }) => {
         }));
     };
 
-    // Function to handle navigation back to the home page
+    // Function to go back to the home page
     const handleGoBack = () => {
         // Navigate back to the home page without refreshing
         window.history.back();
@@ -70,7 +83,6 @@ const AddPage = ({ updateHomePageContent }) => {
                         <option value="Action">Action</option>
                         <option value="Adventure">Adventure</option>
                         <option value="Comedy">Comedy</option>
-                        
                     </select>
                 </div>
                 <div>
@@ -89,8 +101,3 @@ const AddPage = ({ updateHomePageContent }) => {
 }
 
 export default AddPage;
-
-
-
-
-
