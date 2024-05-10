@@ -5,7 +5,7 @@ import '../index.css'; // Import the CSS
 const SearchBar = ({ onChange, onSearch }) => {
     const location = useLocation(); // the current location
     const isAddPage = location.pathname === "/add"; // Check if the current path is "/add"
-
+fetch( )
     // Render the search bar for episode name
     if (isAddPage) {
         return (
