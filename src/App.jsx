@@ -1,5 +1,3 @@
-// App.jsx
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
@@ -11,7 +9,6 @@ import AboutPage from "./components/AboutPage.jsx";
 const App = () => {
     const [episodeList, setEpisodeList] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const currentRoute = window.location.pathname; // Get the current route using window.location.pathname
 
     useEffect(() => {
         fetchEpisodeData();
@@ -72,7 +69,6 @@ const App = () => {
         <Router>
             <div>
                 <Header />
-                {currentRoute !== "/about" && <SearchBar onChange={handleSearchChange} />}
                 <Routes>
                     <Route
                         path="/"
@@ -83,8 +79,7 @@ const App = () => {
                     />
                     <Route
                         path="/add"
-                        element={<AddPage homePageContent={episodeList} />
-                        element={<AddPage updateEpisodeList={setEpisodeList}
+                        element={<AddPage updateEpisodeList={setEpisodeList} />}
                     />
                     <Route path="/about" element={<AboutPage />} />
                 </Routes>
