@@ -53,7 +53,7 @@ Your app is ready to be deployed!
 ```
 
 # Live Link
-https://molly-mbugi.github.io/project-1/
+...
 
 ## Technologies used
 HTML
