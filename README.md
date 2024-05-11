@@ -54,7 +54,7 @@ Your app is ready to be deployed!
 ```
 
 # Live Link
-
+https://maze-app-tv.netlify.app/
 
 ## Technologies used
 HTML
