@@ -11,7 +11,7 @@ function EpisodeTable({ episodes, onDelete, onRefreshTable }) {
       // Collapse the episode if it's already expanded
       setExpandedEpisode(null);
     } else {
-      // Expand the clicked episode
+      // Expand episode
       setExpandedEpisode(episodeId);
     }
   };
@@ -38,7 +38,7 @@ function EpisodeTable({ episodes, onDelete, onRefreshTable }) {
               <h3>{episode.name}</h3>
               <p><strong>Genres:</strong> {episode.genres ? episode.genres.join(', ') : 'N/A'}</p>
               <p><strong>Runtime:</strong> {episode.runtime} minutes</p>
-              {/* Conditional rendering of more details */}
+    
               {expandedEpisode === episode.id && (
                 <>
                   <p dangerouslySetInnerHTML={{ __html: episode.summary }}></p>

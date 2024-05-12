@@ -15,7 +15,7 @@ const AddPage = ({ updateEpisodeList }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/episodes', {
+            const response = await fetch('https://backend-14-szdr.onrender.com/episodes', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

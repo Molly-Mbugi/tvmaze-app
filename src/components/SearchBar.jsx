@@ -4,7 +4,7 @@ import '../index.css'; // Import the CSS
 
 const SearchBar = ({ onChange, onSearch, onRefresh }) => {
     const location = useLocation(); // the current location
-    const isAddPage = location.pathname === "/add"; // Check if the current path is "/add"
+    const isAddPage = location.pathname === "/add"; 
 
     // Function input change
     const handleInputChange = (e) => {
