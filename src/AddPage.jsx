@@ -14,6 +14,11 @@ const AddPage = ({ updateEpisodeList }) => {
     // Function to handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Check if the user confirms adding the episode
+        const confirmAdd = window.confirm('Are you sure you want to add this episode?');
+        if (!confirmAdd) return; // If not confirmed, return without adding
+
         try {
             const response = await fetch('https://backend-14-szdr.onrender.com/episodes', {
                 method: 'POST',
@@ -101,3 +106,4 @@ const AddPage = ({ updateEpisodeList }) => {
 }
 
 export default AddPage;
+
