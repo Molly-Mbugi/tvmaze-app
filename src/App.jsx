@@ -42,10 +42,7 @@ const App = () => {
 
     const handleDeleteEpisode = async (episodeId) => {
         try {
-            const response = await fetch(`Error deleting episode: Error: Failed to delete episode
-            i https://maze-app-tv.netlify.app/assets/index-CZRB8dYT.js:68
-        index-CZRB8dYT.js:68:7518
-        /${episodeId}`, {
+            const response = await fetch(`https://backend-14-szdr.onrender.com/episodes/${episodeId}`, {
                 method: 'DELETE',
             });
             if (!response.ok) {
