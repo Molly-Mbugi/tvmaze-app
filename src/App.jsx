@@ -16,7 +16,7 @@ const App = () => {
 
     const fetchEpisodeData = async () => {
         try {
-            const response = await fetch('http://localhost:3000/episodes');
+            const response = await fetch('https://backend-14-szdr.onrender.com/episodes');
             if (!response.ok) {
                 throw new Error('Failed to fetch episode data');
             }
@@ -29,7 +29,7 @@ const App = () => {
 
     const handleRefresh = async () => {
         try {
-            const response = await fetch('http://localhost:3000/episodes');
+            const response = await fetch('https://backend-14-szdr.onrender.com/episodes');
             if (!response.ok) {
                 throw new Error('Failed to fetch episode data');
             }
@@ -42,7 +42,7 @@ const App = () => {
 
     const handleDeleteEpisode = async (episodeId) => {
         try {
-            const response = await fetch(`http://localhost:3000/episodes/${episodeId}`, {
+            const response = await fetch(`https://backend-14-szdr.onrender.com/episodes/${episodeId}`, {
                 method: 'DELETE',
             });
             if (!response.ok) {
