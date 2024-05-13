@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
     return (
-        <div>
+        <div className="about-container">
             <h2>About TV MAZE APP</h2>
             <p>This is a simple TV Maze application built with React.</p>
             <p>one of the biggest tvshow app for viewing movies details that you want to watch</p>
